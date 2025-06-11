@@ -33,8 +33,8 @@ def extract_weather_data():
         df = pd.DataFrame(forecast_data)
 
         # Add extraction timestamp to DataFrame
-        extraction_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        df.name = f"weather_data_{extraction_time}"
+        #extraction_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        #df.name = f"weather_data_{extraction_time}"
 
     else:
         print("Error fetching weather data:", response.status_code)
@@ -44,10 +44,10 @@ def extract_weather_data():
 
 def load_data_to_s3():
     """
-    Load dataframe .
+    Load dataframe from the extract_weather_data function and
        
-    Returns:
-        write data to s3 bucket.
+    
+    write data to s3 bucket.
     """
     df = extract_weather_data()
     # Get the current date and time for the file name

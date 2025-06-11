@@ -15,8 +15,7 @@ def get_google_sheet_data_public():
     Fetches data from a Google Sheet and returns it as a pandas DataFrame.
     
     Args:
-        sheet_url (str): URL of the Google Sheet.
-        sheet_name (str): Name of the specific sheet to fetch data from.
+       None
         
     Returns:
         pd.DataFrame: DataFrame containing the sheet data.
@@ -41,11 +40,10 @@ def get_google_sheet_data_public():
 
 def update_column_names():
     """
-    Extracts and update column names from a DataFrame.
-    
+    This function fetches data from a Google Sheet function, processes the column names by stripping spaces,
+    converting them to lowercase, and replacing spaces with underscores. The updated DataFrame is then returned.
     Args:
-        df (pd.DataFrame): The DataFrame from which to extract column names.
-        
+        None        
     Returns:
         df: df with updated names.
     """
@@ -60,7 +58,7 @@ def update_column_names():
 
 def load_google_data_to_s3():
     """
-    Load dataframw with updated column names to s3.
+    Load dataframe with updated column names to s3.
        
     Returns:
         write data to s3 bucket.
